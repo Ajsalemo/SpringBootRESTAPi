@@ -1,4 +1,4 @@
-package com.project.springbootrestapi.models;
+package com.springbootrestapi.models;
 
 import java.util.List;
 
@@ -64,6 +64,7 @@ public class Session {
 
     public void setSession_length(Integer session_length) {
         this.session_length = session_length;
+    }
 
     public List<Speaker> getSpeakers() {
         return speakers;
