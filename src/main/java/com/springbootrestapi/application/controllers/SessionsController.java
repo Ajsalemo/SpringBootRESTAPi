@@ -1,9 +1,9 @@
-package com.springbootrestapi.controllers;
+package com.springbootrestapi.application.controllers;
 
 import java.util.List;
 
-import com.springbootrestapi.models.Session;
-import com.springbootrestapi.repositories.SessionRepository;
+import com.springbootrestapi.application.models.Session;
+import com.springbootrestapi.application.repositories.SessionRepository;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

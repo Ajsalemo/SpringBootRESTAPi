@@ -1,9 +1,9 @@
-package com.springbootrestapi.controllers;
+package com.springbootrestapi.application.controllers;
 
 import java.util.List;
 
-import com.springbootrestapi.models.Speaker;
-import com.springbootrestapi.repositories.SpeakerRepository;
+import com.springbootrestapi.application.models.Speaker;
+import com.springbootrestapi.application.repositories.SpeakerRepository;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,8 +45,8 @@ public class SpeakersController {
 
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public Speaker update(@PathVariable Long id, @RequestBody Speaker speaker) {
-        Speaker existingSession = speakerRepository.getOne(id);
-        BeanUtils.copyProperties(speaker, existingSession, "speaker_id");
-        return speakerRepository.saveAndFlush(existingSession);
+        Speaker existingSpeaker = speakerRepository.getOne(id);
+        BeanUtils.copyProperties(speaker, existingSpeaker, "speaker_id");
+        return speakerRepository.saveAndFlush(existingSpeaker);
     }
 }

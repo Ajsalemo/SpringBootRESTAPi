@@ -1,6 +1,6 @@
-package com.springbootrestapi.repositories;
+package com.springbootrestapi.application.repositories;
 
-import com.springbootrestapi.models.Speaker;
+import com.springbootrestapi.application.models.Speaker;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

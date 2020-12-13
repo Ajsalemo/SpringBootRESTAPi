@@ -1,4 +1,4 @@
-package com.springbootrestapi.models;
+package com.springbootrestapi.application.models;
 
 import java.util.List;
 
