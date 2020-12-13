@@ -22,10 +22,6 @@ public class Session {
     private String session_description;
     private Integer session_length;
 
-    @Lob
-    @Type(type = "org.hibernate.type.BinaryType")
-    private byte[] speaker_photo;
-
     @ManyToMany
     @JoinTable(name = "session_speakers", joinColumns = @JoinColumn(name = "session_id"), inverseJoinColumns = @JoinColumn(name = "speaker_id"))
     private List<Speaker> speakers;
