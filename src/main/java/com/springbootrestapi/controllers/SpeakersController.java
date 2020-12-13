@@ -5,6 +5,7 @@ import java.util.List;
 import com.springbootrestapi.models.Speaker;
 import com.springbootrestapi.repositories.SpeakerRepository;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,5 +41,12 @@ public class SpeakersController {
     @RequestMapping(value = "{id}", method = RequestMethod.DELETE)
     public void delete(@PathVariable Long id) {
         speakerRepository.deleteById(id);
+    }
+
+    @RequestMapping(value = "{id}", method = RequestMethod.PUT)
+    public Speaker update(@PathVariable Long id, @RequestBody Speaker speaker) {
+        Speaker existingSession = speakerRepository.getOne(id);
+        BeanUtils.copyProperties(speaker, existingSession, "speaker_id");
+        return speakerRepository.saveAndFlush(existingSession);
     }
 }
