@@ -8,12 +8,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
-import javax.persistence.Lob;
 import javax.persistence.ManyToMany;
 
-import org.hibernate.annotations.Type;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity(name = "sessions")
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Session {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -69,13 +69,4 @@ public class Session {
     public void setSpeakers(List<Speaker> speakers) {
         this.speakers = speakers;
     }
-
-    public byte[] getSpeaker_photo() {
-        return speaker_photo;
-    }
-
-    public void setSpeaker_photo(byte[] speaker_photo) {
-        this.speaker_photo = speaker_photo;
-    }
-
 }
