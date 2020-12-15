@@ -1,0 +1,8 @@
+#!/bin/bash
+# Replace the below variables
+export SPRING_DATASOURCE_HOST=
+export SPRING_DATASOURCE_PORT=
+export SPRING_DATASOURCE_DB=
+export SPRING_DATASOURCE_USERNAME=
+export SPRING_DATASOURCE_PASSWORD=
+
