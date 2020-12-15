@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Loop through
 IFS=$'\n'
 for entries in $(./env.sh); do
    export $entries
